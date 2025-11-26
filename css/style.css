@@ -1,0 +1,70 @@
+/* Reset */
+:root{
+  /* Colors - Light */
+  --bg: #f6f7fb;
+  --card-bg: #ffffff;
+  --text: #0f1724;
+  --muted: #6b7280;
+  --primary: #2563eb;    /* blue button (looks like screenshot) */
+  --accent: #6366f1;
+  --income: #10b981;     /* green */
+  --expense: #ef4444;    /* red */
+  --border: #e6e9ef;
+
+  /* Spacing & sizes */
+  --container: 1200px;
+  --radius: 12px;
+  --gap-sm: 8px;
+  --gap-md: 16px;
+  --gap-lg: 24px;
+  --shadow: 0 6px 20px rgba(16,24,40,0.06);
+  --transition: 0.18s ease;
+
+  /* Typography */
+  --font-base: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+}
+.dark {
+  --bg: #0b1220;
+  --card-bg: #0f1724;
+  --text: #e6eef8;
+  --muted: #9aa6b2;
+  --primary: #3b82f6;
+  --income: #34d399;
+  --expense: #fb7185;
+  --border: #21303e;
+  --shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
