@@ -3,7 +3,188 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Expense Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container navv ">
+        <div class="nav-brand">
+          <i class="fa-solid fa-sack-dollar fa-xl icon-brand"></i>
+          <h1>Expense Tracker</h1>
+        </div>
+        <div class="nav-actions">
+          <i
+            class="fa-regular fa-moon fa-lg dark-mode-toggle"
+            id="theme-toggle"
+          ></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Summary Cards -->
+      <section class="summary-cards">
+        <!-- Card 1: Total Income -->
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Total Income</h2>
+            <span class="card-amount" id="total-income">$2500.00</span>
+            <p class="card-change income-change">+8% from last month</p>
+          </div>
+          <i class="fa-solid fa-arrow-trend-up card-icon icon-income"></i>
+        </div>
+
+        <!-- Card 2: Total Expense -->
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Total Expense</h2>
+            <span class="card-amount" id="total-expense">$1800.00</span>
+            <p class="card-change expense-change">-5% from last month</p>
+          </div>
+          <i class="fa-solid fa-arrow-trend-down card-icon icon-expense"></i>
+        </div>
+
+        <!-- Card 3: Balance -->
+        <div class="card">
+          <div class="card-content">
+            <h2 class="card-title">Balance</h2>
+            <span class="card-amount" id="balance">$700.00</span>
+            <p class="card-change neutral-change">Current balance</p>
+          </div>
+          <i class="fa-solid fa-wallet card-icon icon-balance"></i>
+        </div>
+      </section>
+
+      <!-- Main Grid: Form + Exchange Rates -->
+      <div class="main-grid">
+        <!-- Add Transaction Form -->
+        <section class="form-section">
+          <form id="transaction-form">
+            <h3 class="section-title">Add Transaction</h3>
+
+            <!-- Transaction Type -->
+            <div class="form-group radio-group">
+              <label class="radio-label">
+                <input
+                  type="radio"
+                  name="type"
+                  value="income"
+                  id="income"
+                  checked
+                />
+                <span>Income</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="type" value="expense" id="expense" />
+                <span>Expense</span>
+              </label>
+            </div>
+
+            <!-- Amount + Currency -->
+            <div class="form-row">
+              <input
+                type="number"
+                id="amount"
+                class="form-input"
+                placeholder="Amount"
+                step="0.01"
+                min="0"
+                required
+              />
+              <select id="currency" class="form-select">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="SAR">SAR</option>
+                <option value="EGP" selected>EGP</option>
+              </select>
+            </div>
+
+            <!-- Category -->
+            <div class="form-group">
+              <select id="category" class="form-select" required>
+                <option value="">Select Category</option>
+                <option value="food">🍔 Food</option>
+                <option value="transport">🚗 Transport</option>
+                <option value="shopping">🛍️ Shopping</option>
+                <option value="bills">📄 Bills</option>
+                <option value="entertainment">🎮 Entertainment</option>
+              </select>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+              <input
+                type="text"
+                id="description"
+                class="form-input"
+                placeholder="Description (optional)"
+              />
+            </div>
+
+            <!-- Date -->
+            <div class="form-group">
+              <input type="date" id="date" class="form-input" required />
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-primary">+ Add Transaction</button>
+          </form>
+        </section>
+
+        <!-- Exchange Rates -->
+        <section class="exchange-section">
+          <div class="exchange-header">
+            <h3 class="section-title">💱 Exchange Rates</h3>
+            <i class="fa-solid fa-arrows-rotate refresh-icon"></i>
+          </div>
+
+          <div class="exchange-rate">
+            <span>1 USD</span>
+            <span>= 1 USD</span>
+          </div>
+          <div class="exchange-rate">
+            <span>1 EUR</span>
+            <span>= 0.92 USD</span>
+          </div>
+          <div class="exchange-rate">
+            <span>1 SAR</span>
+            <span>= 3.75 USD</span>
+          </div>
+          <div class="exchange-rate">
+            <span>1 EGP</span>
+            <span>= 30.5 USD</span>
+          </div>
+
+          <span class="exchange-updated">Last updated: just now</span>
+        </section>
+      </div>
+
+      <!-- Charts Section (Empty for now - Day 5) -->
+      <section class="charts-section">
+        <!-- Charts will go here on Day 5 -->
+      </section>
+
+      <!-- Filters Section (Empty for now - Day 4) -->
+      <section class="filters-section">
+        <!-- Filters will go here on Day 4 -->
+      </section>
+
+      <!-- Transactions List (Empty for now - Day 2) -->
+      <section class="transactions-section">
+        <!-- Transactions list will go here on Day 2 -->
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
